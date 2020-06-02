@@ -1,0 +1,7 @@
+def save_model(self):
+        model_json=self.model.to_json()
+        with open(root_path+"/model_json.json", "w") as json_file:
+            json_file.write(model_json)
+        self.model.save_weights(root_path+'/model_weight.h5')
+        self.model.save(root_path+'/model.h5')
+        print('model saved')
